@@ -20,8 +20,7 @@ app.use('/', adminRoute);
 
 const port = process.env.PORT || 8080;
 
-mongoose
-  .connect(process.env.DB_Host, {
+mongoose.connect('mongodb://127.0.0.1:27017/games', {
     useCreateIndex: true,
     useUnifiedTopology: true,
     useNewUrlParser: true,
