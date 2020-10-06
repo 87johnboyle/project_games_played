@@ -9,4 +9,6 @@ router.get('/add-game', adminController.getAddGame);
 
 router.post('/add-game', adminController.postGame);
 
+router.get('/:gameId', adminController.getGame);
+
 module.exports = router

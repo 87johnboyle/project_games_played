@@ -4,8 +4,28 @@ exports.getIndex = (req, res) => {
 
 const Game = require('../models/Game');
 
-exports.getIndex = (req, res) => {
-    res.status(200).render('index');
+exports.getIndex = async (req, res) => {
+    const game = await Game.find((data) => data);
+
+    try {
+        console.log(game);
+        res.status(200).render('index', { game: game });
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+exports.getGame = async (req, res) => {
+    const gameId = req.params.gameId;
+
+    const game = await Game.findById(gameId, (game) => game);
+
+    try {
+        console.log(game);
+        res.status(200).render('game', { game: game });
+    } catch (error) {
+        console.log(error);
+    }
 };
 
 exports.getAddGame = (req, res) => {
