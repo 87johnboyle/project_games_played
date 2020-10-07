@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" img-src 'self' http://0.0.0.0:8080/>
         <title>Game</title>
     </head>
     <body>
@@ -12,6 +12,19 @@
             <h1><%= game.name %></h1>
             <img src="<%= game.image %>" alt="<%= game.name %>" />
             <p><%= game.description %></p>
+
+            <div>
+                <form method="POST" action="/delete">
+                    <div>
+                        <input type="hidden" value="<%= game.id %>" name="gameId" />
+                        <button>Delete</button>
+                    </div>
+                </form>
+            </div>
+
+            <div>
+                <a href="/edit-game/<%= game.id %>?edit=true">Edit</a>
+            </div>
         </main>
     </body>
 </html>
