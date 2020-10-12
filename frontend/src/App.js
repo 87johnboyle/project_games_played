@@ -1,9 +1,31 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import './App.css';
+import fetchJsonp from 'fetch-jsonp'
 
 const App = () => {
+
+  const [state, setState] = useState({
+    loading: false,
+    data: null,
+  });
+
     useEffect(() => {
-      const getAPI = async () => {
+      setState({ loading: true });
+      const api = `https://www.giantbomb.com/api/games/?api_key=8f116a5d612b9c3b8078a16806fadea372c7824e&format=jsonp&json_callback=json_callback`;
+      fetchJsonp(api, {
+        crossDomain:true,
+        method: 'GET',
+        jsonpCallback: 'json_callback',
+        headers: {'Content-Type':'application/json'}
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          setState({ loading: false, data: data});
+      });
+    }, []);
+
+    useEffect(() => {
+        const getAPI = async () => {
         const response = await fetch('http://localhost:8080/');
         const data = await response.json();
 
