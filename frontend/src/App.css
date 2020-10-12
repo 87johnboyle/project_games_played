@@ -13,18 +13,11 @@ html {
 body {
     font-size: 1.6rem;
     font-family: 'Darker Grotesque', sans-serif;
-    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#613aa1+0,3f226b+50,381d5f+59,351c5c+100 */
-    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#613aa1+1,3f226b+50,381d5f+59,351c5c+100 */
     background: #613aa1;
-    /* Old browsers */
     background: -moz-linear-gradient(left, #613aa1 1%, #3f226b 50%, #381d5f 59%, #351c5c 100%);
-    /* FF3.6-15 */
     background: -webkit-linear-gradient(left, #613aa1 1%, #3f226b 50%, #381d5f 59%, #351c5c 100%);
-    /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to right, #613aa1 1%, #3f226b 50%, #381d5f 59%, #351c5c 100%);
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#613aa1', endColorstr='#351c5c', GradientType=1);
-    /* IE6-9 */
 
 
 }
@@ -71,8 +64,20 @@ header a:hover {
     box-shadow: 0px 0px 26px -2px rgba(36, 4, 92, 1);
 }
 
+.container img {
+  max-width: 100%;
+  max-height: auto;
+}
+
 main {
     margin-bottom: 2rem;
+}
+
+.listContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 10px
 }
 
 .game {

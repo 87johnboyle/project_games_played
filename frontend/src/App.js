@@ -31,9 +31,11 @@ const App = () => {
 
         <div className="container">
               {loading ? (
-                  <div>Loading</div>
-              ) : (
                   <div>
+                  <p>Loading</p>
+                  </div>
+              ) : (
+                  <div className="listContainer">
                       {game.map((data) => (
                           <div key={data._id}>
                           <main>
@@ -43,7 +45,7 @@ const App = () => {
                                       </h1>
                                   </li>
                                   <li>
-                                      <img src={data.image} alt={data.name} />
+                                      <img src={data.image} alt={data.name}/>
                                   </li>
                                   <li>
                                       <p>{data.description}</p>
