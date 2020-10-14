@@ -34,7 +34,7 @@ exports.postGame = (req, res) => {
     const game = new Game({ name: name, image: image, description: description });
     game.save();
     console.log('Game Added to the database');
-    res.status(201).redirect('http://localhost:3000/');
+    res.status(201).redirect('/');
 };
 
 exports.postDelete = async (req, res) => {
@@ -65,7 +65,7 @@ exports.postEditGame = (req, res) => {
         })
         .then(() => {
             console.log('Item Updated');
-            res.status(201).redirect('/');
+            res.status(201).redirect(`/`);
         })
         .catch((err) => {
             console.log(err);

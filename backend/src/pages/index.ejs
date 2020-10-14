@@ -1,21 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" img-src 'self' http://0.0.0.0:8080/>
-        <title>Home</title>
-    </head>
-    <body>
-        <h1>Home Page</h1>
+<%- include('header'); -%>
 
-        <main>
-          <% game.forEach(data => { %>
-              <ul>
-                  <li><h1><a href="/<%= data.id %>"><%= data.name %></a></h1></li>
-                  <li><img src="<%= data.image %>" alt="<%= data.name %>" /></h1></li>
-                  <li><p><%= data.description %></p></li>
-              </ul>
-          <% }) %>
-      </main>
-    </body>
-</html>
+<main>
+	<div class="container">
+		<% game.forEach(data => { %>
+		<ul class="game">
+			<li><img src="<%= data.image %>" alt="<%= data.name %>" class="game-img" /></li>
+			<li>
+				<h1><%= data.name %></h1>
+			</li>
+
+			<li>
+				<a href="/<%= data.id %>">View game</a>
+			</li>
+		</ul>
+		<% }) %>
+	</div>
+</main>
+<%- include('footer'); -%>

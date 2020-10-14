@@ -47,8 +47,7 @@ const App = () => {
       <Fragment>
       <header>
       <h1>My Game List</h1>
-      <a href="http://localhost:8080">View All Games</a>
-      <a href="http://localhost:8080/add-game">Add New Game &#x27A2;</a>
+      <a href="http://localhost:8080/add-game">Add New Game</a>
     </header>
 
         <div className="container">
@@ -70,7 +69,7 @@ const App = () => {
                                       <img src={data.image} alt={data.name}/>
                                   </li>
                                   <li>
-                                      <p>{data.description}</p>
+                                      <a href={'http://localhost:8080/' + data._id}>View Game</a>
                                   </li>
                               </ul>
                               </main>
